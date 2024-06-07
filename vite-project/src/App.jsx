@@ -11,6 +11,8 @@ import Dashboard from "./Dashboard/Dashboard";
 import Messages from "./Dashboard/Messages";
 import Services from "./Dashboard/Services";
 import AddService from "./Dashboard/AddService";
+import Signup from "./SignUp";
+import SignIn from "./SignIn";
 
 export const ToggleContext = createContext();
 
@@ -24,9 +26,10 @@ function App() {
   const Layout = () => {
     return (
       <div className="app">
-        <DashNav />
+        <Navbar />
         <MobileNav />
         <Outlet />
+        <Footer />
       </div>
     );
   };
@@ -38,7 +41,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Payouts />,
+          element: <Home />,
         },
         {
           path: "/dashboard",
@@ -61,6 +64,14 @@ function App() {
     {
       path: "/login",
       element: <Home />,
+    },
+    {
+      path: "/signup",
+      element: <Signup />,
+    },
+    {
+      path: "/signin",
+      element: <SignIn />,
     },
   ]);
 

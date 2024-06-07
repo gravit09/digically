@@ -1014,410 +1014,63 @@ function Navbar() {
                       </ul>
                     </div>
                   </div>
+                  <div className="col-lg-8 d-none d-xl-flex align-items-center ">
+                    <div className="search_area dashboard-style">
+                      <input
+                        type="text"
+                        className="form-control border-0"
+                        placeholder="What service are you looking for today?"
+                      />
+                      <label>
+                        <span className="flaticon-loupe" />
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div className="col-lg-4 d-flex align-items-center justify-content-end">
+                <ul
+                  id="respMenu"
+                  className="ace-responsive-menu"
+                  data-menu-style="horizontal"
+                >
+                  <li className="visible_list">
+                    <a className="list-item" href="#">
+                      <span className="title">Users</span>
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <span className="title">Dashboard</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-become-seller.html">
+                          <span className="title">Become Seller</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
 
-              <div className="col-auto">
-                <div className="d-flex align-items-center">
-                  <ul
-                    id="respMenu"
-                    className="ace-responsive-menu"
-                    data-menu-style="horizontal"
-                  >
-                    <li className="visible_list">
-                      <a className="list-item" href="#">
-                        <span className="title">Home</span>
-                      </a>
-                      <ul>
-                        <li>
-                          <a href="index.html">Home V1</a>
-                        </li>
-                        <li>
-                          <a href="index2.html">Home V2</a>
-                        </li>
-                        <li>
-                          <a href="index3.html">Home V3</a>
-                        </li>
-                        <li>
-                          <a href="index4.html">Home V4</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="visible_list">
-                      <a className="list-item" href="#">
-                        <span className="title">Browse Jobs</span>
-                      </a>
-                      <ul>
-                        <li>
-                          <a href="#">
-                            <span className="title">Services</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-service-v1.html">Service v1</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v2.html">Service v2</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v3.html">Service v3</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v4.html">Service v4</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v5.html">Service v5</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v6.html">Service v6</a>
-                            </li>
-                            <li>
-                              <a href="page-service-v7.html">Service v7</a>
-                            </li>
-                            <li>
-                              <a href="page-service-all.html">Service All</a>
-                            </li>
-                            <li>
-                              <a href="page-service-single.html">
-                                Service Single
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-service-single-v1.html">
-                                Single V1
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-service-single-v2.html">
-                                Single V2
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Projects</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-project-v1.html">Project v1</a>
-                            </li>
-                            <li>
-                              <a href="page-project-list-v1.html">List v1</a>
-                            </li>
-                            <li>
-                              <a href="page-project-list-v2.html">List v2</a>
-                            </li>
-                            <li>
-                              <a href="page-project-list-v3.html">List v3</a>
-                            </li>
-                            <li>
-                              <a href="page-project-single.html">
-                                Project Single
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-project-single-v1.html">
-                                Single V1
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-project-single-v2.html">
-                                Single V2
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Job View</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-job-list-v1.html">Job list v1</a>
-                            </li>
-                            <li>
-                              <a href="page-job-list-v2.html">Job list v2</a>
-                            </li>
-                            <li>
-                              <a href="page-job-list-v3.html">Job list V3</a>
-                            </li>
-                            <li>
-                              <a href="page-job-list-single.html">Job Single</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="visible_list">
-                      <a className="list-item" href="#">
-                        <span className="title">Users</span>
-                      </a>
-                      <ul>
-                        <li>
-                          <a href="#">
-                            <span className="title">Dashboard</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-dashboard.html">Dashboard</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-proposal.html">
-                                Proposal
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-save.html">Saved</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-message.html">Message</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-reviews.html">Reviews</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-invoice.html">Invoice</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-payouts.html">Payouts</a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-statement.html">
-                                Statement
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-manage-service.html">
-                                Manage Service
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-add-service.html">
-                                Add Services
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-manage-jobs.html">
-                                Manage Jobs
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-manage-project.html">
-                                Manage Project
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-create-project.html">
-                                Create Project
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-dashboard-profile.html">
-                                My Profile
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Employee</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-employee-v1.html">Employee V1</a>
-                            </li>
-                            <li>
-                              <a href="page-employee-v2.html">Employee V2</a>
-                            </li>
-                            <li>
-                              <a href="page-employee-single.html">
-                                Employee Single
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Freelancer</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-freelancer-v1.html">
-                                Freelancer V1
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-v2.html">
-                                Freelancer V2
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-v3.html">
-                                Freelancer V3
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-list-v1.html">List V1</a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-list-v2.html">List V2</a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-list-v3.html">List V3</a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-single.html">
-                                Freelancer Single
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-single-v1.html">
-                                Single V1
-                              </a>
-                            </li>
-                            <li>
-                              <a href="page-freelancer-single-v2.html">
-                                Single V2
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="page-become-seller.html">
-                            <span className="title">Become Seller</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="visible_list">
-                      <a className="list-item" href="#">
-                        <span className="title">Pages</span>
-                      </a>
-                      <ul>
-                        <li>
-                          <a href="#">
-                            <span className="title">About</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-about.html">About v1</a>
-                            </li>
-                            <li>
-                              <a href="page-about-v2.html">About v2</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Blog</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-blog-v1.html">List V1</a>
-                            </li>
-                            <li>
-                              <a href="page-blog-v2.html">List V2</a>
-                            </li>
-                            <li>
-                              <a href="page-blog-v3.html">List V3</a>
-                            </li>
-                            <li>
-                              <a href="page-blog-single.html">Single</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="title">Shop</span>
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="page-shop.html">List</a>
-                            </li>
-                            <li>
-                              <a href="page-shop-single.html">Single</a>
-                            </li>
-                            <li>
-                              <a href="page-shop-cart.html">Cart</a>
-                            </li>
-                            <li>
-                              <a href="page-shop-checkout.html">Checkout</a>
-                            </li>
-                            <li>
-                              <a href="page-shop-order.html">Order</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="page-contact.html">Contact</a>
-                        </li>
-                        <li>
-                          <a href="page-error.html">404</a>
-                        </li>
-                        <li>
-                          <a href="page-faq.html">Faq</a>
-                        </li>
-                        <li>
-                          <a href="page-help.html">Help</a>
-                        </li>
-                        <li>
-                          <a href="page-invoice.html">Invoices</a>
-                        </li>
-                        <li>
-                          <a href="page-login.html">Login</a>
-                        </li>
-                        <li>
-                          <a href="page-pricing.html">Pricing</a>
-                        </li>
-                        <li>
-                          <a href="page-register.html">Register</a>
-                        </li>
-                        <li>
-                          <a href="page-terms.html">Terms</a>
-                        </li>
-                        <li>
-                          <a href="page-ui-element.html">UI Elements</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a className="list-item" href="page-contact.html">
-                        Contact
-                      </a>
-                    </li>
-                  </ul>
-                  <a
-                    className="login-info bdrl1 pl15-lg pl30"
-                    data-bs-toggle="modal"
-                    href="#exampleModalToggle"
-                    role="button"
-                  >
-                    <span className="flaticon-loupe" />
-                  </a>
-                  <a
-                    className="login-info mx15-lg mx30"
-                    href="page-become-seller.html"
-                  >
-                    <span className="d-none d-xl-inline-block">Become a</span>
-                    Seller
-                  </a>
-                  <a className="login-info mr15-lg mr30" href="page-login.html">
-                    Sign in
-                  </a>
-                  <a
-                    className="ud-btn btn-thm add-joining"
-                    href="page-register.html"
-                  >
-                    Join
-                  </a>
-                </div>
+                  <li>
+                    <a className="list-item" href="page-contact.html">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+
+                <Link className="login-info mr15-lg mr30" to="/signin">
+                  Sign in
+                </Link>
+                <Link className="ud-btn btn-thm add-joining" to="/signup">
+                  Join
+                </Link>
               </div>
             </div>
           </div>
         </nav>
       </header>
-      <section className="categories_list_section overflow-hidden">
+      <section className="categories_list_section overflow-hidden d-none d-lg-flex">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

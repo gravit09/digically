@@ -4,64 +4,63 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
-      <section className="breadcumb-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="breadcumb-style1">
-                <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Services</a>
-                  <a href="#">Design &amp; Creative</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="breadcumb-section pt-0">
-        <div className="cta-service-v1 cta-banner mx-auto maxw1700 pt120 pb120 bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
-          <img
-            className="left-top-img wow zoomIn"
-            src="images/vector-img/left-top.png"
-            alt=""
-          />
-          <img
-            className="right-bottom-img wow zoomIn"
-            src="images/vector-img/right-bottom.png"
-            alt=""
-          />
-          <img
-            className="service-v1-vector bounce-y d-none d-lg-block"
-            src="images/vector-img/vector-service-v1.png"
-            alt=""
-          />
+      <section className=" mt-40 pt30 pb90">
+        <section className="breadcumb-section">
           <div className="container">
-            <div className="row wow fadeInUp">
-              <div className="col-xl-5">
-                <div className="position-relative">
-                  <h2>Design &amp; Creative</h2>
-                  <p className="text mb30">
-                    Give your visitor a smooth online experience with a solid UX
-                    design
-                  </p>
-                  <div className="d-flex align-items-center">
-                    <a
-                      className="video-btn mr10 popup-iframe popup-youtube"
-                      href="https://www.youtube.com/watch?v=7EHnQ0VM4KY"
-                    >
-                      <i className="fal fa-play" />
-                    </a>
-                    <h6 className="mb-0">How Digically Works</h6>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="breadcumb-style1">
+                  <div className="breadcumb-list">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Design &amp; Creative</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className=" mt-40 pt30 pb90">
+        </section>
+        <section className="breadcumb-section pt-0">
+          <div className="cta-service-v1 cta-banner mx-auto maxw1700 pt120 pb120 bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
+            <img
+              className="left-top-img wow zoomIn"
+              src="images/vector-img/left-top.png"
+              alt=""
+            />
+            <img
+              className="right-bottom-img wow zoomIn"
+              src="images/vector-img/right-bottom.png"
+              alt=""
+            />
+            <img
+              className="service-v1-vector bounce-y d-none d-lg-block"
+              src="images/vector-img/vector-service-v1.png"
+              alt=""
+            />
+            <div className="container">
+              <div className="row wow fadeInUp">
+                <div className="col-xl-5">
+                  <div className="position-relative">
+                    <h2>Design &amp; Creative</h2>
+                    <p className="text mb30">
+                      Give your visitor a smooth online experience with a solid
+                      UX design
+                    </p>
+                    <div className="d-flex align-items-center">
+                      <a
+                        className="video-btn mr10 popup-iframe popup-youtube"
+                        href="https://www.youtube.com/watch?v=7EHnQ0VM4KY"
+                      >
+                        <i className="fal fa-play" />
+                      </a>
+                      <h6 className="mb-0">How Digically Works</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="container">
           <div className="row align-items-center mb20">
             <div className="col-6 col-sm-6 col-lg-9 pe-0">
