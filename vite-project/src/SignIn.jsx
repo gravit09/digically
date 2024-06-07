@@ -12,6 +12,9 @@ function SignIn() {
               data-wow-delay="300ms"
             >
               <div className="main-title text-center">
+                <Link to="/">
+                  <h1 className="mb30 mt-50">Digically</h1>
+                </Link>
                 <h2 className="title">Log In</h2>
                 <p className="paragraph">
                   Give your visitor a smooth online experience with a solid UX
@@ -27,7 +30,7 @@ function SignIn() {
                   <h4>We're glad to see you again!</h4>
                   <p className="text">
                     Don't have an account?{" "}
-                    <Link to="//signup" className="text-thm">
+                    <Link to="/signup" className="text-thm">
                       Sign Up!
                     </Link>
                   </p>

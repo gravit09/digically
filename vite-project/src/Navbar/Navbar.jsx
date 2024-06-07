@@ -1040,9 +1040,9 @@ function Navbar() {
                     </a>
                     <ul>
                       <li>
-                        <a href="#">
+                        <Link to="/dashboard">
                           <span className="title">Dashboard</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <a href="page-become-seller.html">

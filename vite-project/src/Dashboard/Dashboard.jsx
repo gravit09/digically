@@ -128,10 +128,10 @@ function Dashboard() {
                         </a>
                       </li>
                       <li>
-                        <a href="page-dashboard-message.html">
+                        <Link to="/dashboard/messages">
                           <i className="flaticon-chat mr10" />
                           Message
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <a href="page-dashboard-reviews.html">

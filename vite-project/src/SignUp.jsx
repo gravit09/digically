@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -11,6 +12,9 @@ function SignUp() {
               data-wow-delay="300ms"
             >
               <div className="main-title text-center">
+                <Link to="/">
+                  <h1 className="mb30 mt-40">Digically</h1>
+                </Link>
                 <h2 className="title">Register</h2>
                 <p className="paragraph">
                   Give your visitor a smooth online experience with a solid UX
@@ -26,9 +30,9 @@ function SignUp() {
                   <h4>Let's create your account!</h4>
                   <p className="text mt20">
                     Already have an account?{" "}
-                    <a href="page-login.html" className="text-thm">
+                    <Link to="/signin" className="text-thm">
                       Log In!
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="mb25">
