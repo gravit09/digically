@@ -14,6 +14,7 @@ import Services from "./Dashboard/Services";
 import AddService from "./Dashboard/AddService";
 import Signup from "./SignUp";
 import SignIn from "./SignIn";
+import Profile from "./Dashboard/Profile";
 
 export const ToggleContext = createContext();
 
@@ -79,6 +80,14 @@ function App() {
         {
           path: "/dashboard/addServices",
           element: <AddService />,
+        },
+        {
+          path: "/dashboard/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/dashboard/payouts",
+          element: <Payouts />,
         },
       ],
     },

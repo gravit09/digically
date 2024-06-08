@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
-      <section className=" mt-40 pt30 pb90">
+      <section className=" mt-40 pt30 pb90 ">
         <section className="breadcumb-section">
           <div className="container">
             <div className="row">

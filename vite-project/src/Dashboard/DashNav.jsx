@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { ToggleContext } from "../App";
+import { Link } from "react-router-dom";
 
 function DashNav() {
   const { handleToggle } = useContext(ToggleContext);
@@ -12,9 +13,9 @@ function DashNav() {
             <div className="col-6 col-lg-auto">
               <div className="text-center text-lg-start d-flex align-items-center">
                 <div className="dashboard_header_logo position-relative me-2 me-xl-5">
-                  <a href="#" className="logo">
+                  <Link to="/dashboard" className="logo">
                     <h2>Digically</h2>
-                  </a>
+                  </Link>
                 </div>
                 <div onClick={handleToggle} className="fz20 ml90">
                   <a href="#" className="dashboard_sidebar_toggle_icon vam">

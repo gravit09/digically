@@ -1,6 +1,9 @@
 import React from "react";
+import { useContext } from "react";
+import { ToggleContext } from "../App";
 
 function Messages() {
+  const { show } = useContext(ToggleContext);
   return (
     <div className="dashboard_content_wrapper">
       <div className="dashboard dashboard_wrapper pr30 pr0-xl">
@@ -210,10 +213,7 @@ function Messages() {
               </div>
               <div className="col-lg-12">
                 <div className="dashboard_title_area">
-                  <h2>Dashboard</h2>
-                  <p className="text">
-                    Lorem ipsum dolor sit amet, consectetur.
-                  </p>
+                  <h2>Messages</h2>
                 </div>
               </div>
             </div>

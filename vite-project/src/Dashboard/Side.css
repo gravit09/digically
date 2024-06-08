@@ -1,0 +1,50 @@
+/* Styles for the toggle button */
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000; /* Adjust color as needed */
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide the sidebar by default */
+  width: 250px;
+  height: 100%;
+  background-color: #fff; /* Adjust background color as needed */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000; /* Make sure it stays above other content */
+}
+
+.sidebar.open {
+  left: 0; /* Move the sidebar into view */
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  padding: 10px 0;
+}
+
+.dropdown-content li a {
+  color: #000; /* Adjust text color as needed */
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  text-decoration: underline;
+}

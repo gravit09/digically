@@ -1033,32 +1033,10 @@ function Navbar() {
                   id="respMenu"
                   className="ace-responsive-menu"
                   data-menu-style="horizontal"
-                >
-                  <li className="visible_list">
-                    <a className="list-item" href="#">
-                      <span className="title">Users</span>
-                    </a>
-                    <ul>
-                      <li>
-                        <Link to="/dashboard">
-                          <span className="title">Dashboard</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <a href="page-become-seller.html">
-                          <span className="title">Become Seller</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <a className="list-item" href="page-contact.html">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-
+                ></ul>
+                <Link className="login-info mr15-lg mr30" to="/dashboard">
+                  Dashboard
+                </Link>
                 <Link className="login-info mr15-lg mr30" to="/signin">
                   Sign in
                 </Link>

@@ -815,56 +815,18 @@ function Service() {
             <div className="col-sm-6 col-lg-3">
               <div className="listing-style1">
                 <div className="list-thumb">
-                  <div className="listing-thumbIn-slider position-relative navi_pagi_bottom_center slider-1-grid owl-carousel owl-theme">
-                    <div className="item">
-                      <img
-                        className="w-100"
-                        src="images/listings/g-2.jpg"
-                        alt=""
-                      />
-                      <a href="#" className="listing-fav fz12">
-                        <span className="far fa-heart" />
-                      </a>
-                    </div>
-                    <div className="item">
-                      <img
-                        className="w-100"
-                        src="images/listings/g-3.jpg"
-                        alt=""
-                      />
-                      <a href="#" className="listing-fav fz12">
-                        <span className="far fa-heart" />
-                      </a>
-                    </div>
-                    <div className="item">
-                      <img
-                        className="w-100"
-                        src="images/listings/g-4.jpg"
-                        alt=""
-                      />
-                      <a href="#" className="listing-fav fz12">
-                        <span className="far fa-heart" />
-                      </a>
-                    </div>
-                    <div className="item">
-                      <img
-                        className="w-100"
-                        src="images/listings/g-5.jpg"
-                        alt=""
-                      />
-                      <a href="#" className="listing-fav fz12">
-                        <span className="far fa-heart" />
-                      </a>
-                    </div>
-                  </div>
+                  <img className="w-100" src="images/listings/g-1.jpg" alt="" />
+                  <a href="#" className="listing-fav fz12">
+                    <span className="far fa-heart" />
+                  </a>
                 </div>
                 <div className="list-content">
                   <p className="list-text body-color fz14 mb-1">
-                    Art &amp; Illustration
+                    Web &amp; App Design
                   </p>
                   <h5 className="list-title">
                     <a href="page-services-single.html">
-                      I will create modern flat design illustration
+                      I will design modern websites in figma or adobe xd
                     </a>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
@@ -879,12 +841,12 @@ function Service() {
                       <span className="position-relative mr10">
                         <img
                           className="rounded-circle"
-                          src="images/team/fl-s-2.png"
+                          src="images/team/fl-s-1.png"
                           alt="Freelancer Photo"
                         />
                         <span className="online-badge" />
                       </span>
-                      <span className="fz14">Ali Tufan</span>
+                      <span className="fz14">Wanda Runo</span>
                     </a>
                     <div className="budget">
                       <p className="mb-0 body-color">
