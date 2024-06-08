@@ -13,7 +13,7 @@ function DashNav() {
             <div className="col-6 col-lg-auto">
               <div className="text-center text-lg-start d-flex align-items-center">
                 <div className="dashboard_header_logo position-relative me-2 me-xl-5">
-                  <Link to="/dashboard" className="logo">
+                  <Link to="/" className="logo">
                     <h2>Digically</h2>
                   </Link>
                 </div>

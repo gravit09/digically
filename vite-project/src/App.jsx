@@ -15,6 +15,9 @@ import AddService from "./Dashboard/AddService";
 import Signup from "./SignUp";
 import SignIn from "./SignIn";
 import Profile from "./Dashboard/Profile";
+import Reviews from "./Dashboard/Reviews";
+import Saved from "./Dashboard/Saved";
+import Invoice from "./Dashboard/Invoice";
 
 export const ToggleContext = createContext();
 
@@ -88,6 +91,18 @@ function App() {
         {
           path: "/dashboard/payouts",
           element: <Payouts />,
+        },
+        {
+          path: "/dashboard/reviews",
+          element: <Reviews />,
+        },
+        {
+          path: "/dashboard/saved",
+          element: <Saved />,
+        },
+        {
+          path: "/dashboard/invoice",
+          element: <Invoice />,
         },
       ],
     },

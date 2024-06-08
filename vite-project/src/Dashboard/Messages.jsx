@@ -1,216 +1,86 @@
 import React from "react";
 import { useContext } from "react";
 import { ToggleContext } from "../App";
+import { Link } from "react-router-dom";
 
 function Messages() {
   const { show } = useContext(ToggleContext);
   return (
     <div className="dashboard_content_wrapper">
-      <div className="dashboard dashboard_wrapper pr30 pr0-xl">
+      <div
+        className={`dashboard dashboard_wrapper pr30 pr0-xl ${
+          show ? "" : "dsh_board_sidebar_hidden"
+        }`}
+      >
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
             <p className="fz15 fw400 ff-heading pl30">Start</p>
             <div className="sidebar_list_item">
-              <a href="page-dashboard.html" className="items-center">
+              <Link to="/dashboard" className="items-center ">
                 <i className="flaticon-home mr15" />
                 Dashboard
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item">
-              <a href="page-dashboard-proposal.html" className="items-center">
-                <i className="flaticon-document mr15" />
-                My Proposals
-              </a>
-            </div>
-            <div className="sidebar_list_item">
-              <a href="page-dashboard-save.html" className="items-center">
+              <Link to="/dashboard/saved" className="items-center">
                 <i className="flaticon-like mr15" />
                 Saved
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-message.html"
+              <Link
+                to="/dashboard/messages"
                 className="items-center -is-active"
               >
                 <i className="flaticon-chat mr15" />
                 Message
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item ">
-              <a href="page-dashboard-reviews.html" className="items-center">
+              <Link to="/dashboard/reviews" className="items-center">
                 <i className="flaticon-review-1 mr15" />
                 Reviews
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item">
-              <a href="page-dashboard-invoice.html" className="items-center">
+              <Link to="/dashboard/invoice" className="items-center">
                 <i className="flaticon-receipt mr15" />
                 Invoice
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item">
-              <a href="page-dashboard-payouts.html" className="items-center">
+              <Link to="/dashboard/payouts" className="items-center">
                 <i className="flaticon-dollar mr15" />
                 Payouts
-              </a>
-            </div>
-            <div className="sidebar_list_item">
-              <a href="page-dashboard-statement.html" className="items-center">
-                <i className="flaticon-web mr15" />
-                Statements
-              </a>
+              </Link>
             </div>
             <p className="fz15 fw400 ff-heading pl30 mt30">
               Organize and Manage
             </p>
             <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-manage-service.html"
-                className="items-center"
-              >
+              <Link to="/dashboard/services" className="items-center">
                 <i className="flaticon-presentation mr15" />
                 Manage Services
-              </a>
-            </div>
-            <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-manage-jobs.html"
-                className="items-center"
-              >
-                <i className="flaticon-briefcase mr15" />
-                Manage Jobs
-              </a>
-            </div>
-            <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-manage-project.html"
-                className="items-center"
-              >
-                <i className="flaticon-content mr15" />
-                Manage Project
-              </a>
+              </Link>
             </div>
             <p className="fz15 fw400 ff-heading pl30 mt30">Account</p>
             <div className="sidebar_list_item ">
-              <a href="page-dashboard-profile.html" className="items-center">
+              <Link to="/dashboard/profile" className="items-center">
                 <i className="flaticon-photo mr15" />
                 My Profile
-              </a>
+              </Link>
             </div>
             <div className="sidebar_list_item ">
-              <a href="page-login.html" className="items-center">
+              <Link to="/signin" className="items-center">
                 <i className="flaticon-logout mr15" />
                 Logout
-              </a>
+              </Link>
             </div>
           </div>
         </div>
         <div className="dashboard__main pl0-md">
           <div className="dashboard__content hover-bgc-color">
             <div className="row pb40">
-              <div className="col-lg-12">
-                <div className="dashboard_navigationbar d-block d-lg-none">
-                  <div className="dropdown">
-                    <button onclick="myFunction()" className="dropbtn">
-                      <i className="fa fa-bars pr10" /> Dashboard Navigation
-                    </button>
-                    <ul id="myDropdown" className="dropdown-content">
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">Start</p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard.html">
-                          <i className="flaticon-home mr10" />
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-proposal.html">
-                          <i className="flaticon-document mr10" />
-                          My Proposals
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-save.html">
-                          <i className="flaticon-like mr10" />
-                          Saved
-                        </a>
-                      </li>
-                      <li className="active">
-                        <a href="page-dashboard-message.html">
-                          <i className="flaticon-chat mr10" />
-                          Message
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-reviews.html">
-                          <i className="flaticon-review-1 mr10" />
-                          Reviews
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-invoice.html">
-                          <i className="flaticon-receipt mr10" />
-                          Invoice
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-payouts.html">
-                          <i className="flaticon-dollar mr10" />
-                          Payouts
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-statement.html">
-                          <i className="flaticon-web mr10" />
-                          Statements
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Organize and Manage
-                        </p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-service.html">
-                          <i className="flaticon-presentation mr10" />
-                          Manage Services
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-jobs.html">
-                          <i className="flaticon-briefcase mr10" />
-                          Manage Jobs
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-project.html">
-                          <i className="flaticon-content mr10" />
-                          Manage Project
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Account
-                        </p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-profile.html">
-                          <i className="flaticon-photo mr10" />
-                          My Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-login.html">
-                          <i className="flaticon-logout mr10" />
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
               <div className="col-lg-12">
                 <div className="dashboard_title_area">
                   <h2>Messages</h2>

@@ -15,14 +15,9 @@ function MobileDashNav() {
         <div className="header bdrb1">
           <div className="menu_and_widgets">
             <div className="mobile_menu_bar d-flex justify-content-between align-items-center">
-              <Link to="/dashboard" className="mobile_logo">
+              <Link to="/" className="mobile_logo">
                 <h2>Digically</h2>
               </Link>
-              <div className="right-side text-end">
-                <a className="" href="page-login.html">
-                  join
-                </a>
-              </div>
               <button onClick={toggleSidebar} className="toggle-button">
                 <i className="fa fa-bars"></i>
               </button>
@@ -36,52 +31,41 @@ function MobileDashNav() {
             <li>
               <p className="fz15 fw400 ff-heading mt30 pl30">Start</p>
             </li>
+
             <li className="active">
-              <Link to="page-dashboard.html">
+              <Link to="/dashboard">
                 <i className="flaticon-home mr10" />
                 Dashboard
               </Link>
             </li>
             <li>
-              <Link to="page-dashboard-proposal.html">
-                <i className="flaticon-document mr10" />
-                My Proposals
-              </Link>
-            </li>
-            <li>
-              <Link to="page-dashboard-save.html">
+              <Link to="/dashboard/saved">
                 <i className="flaticon-like mr10" />
                 Saved
               </Link>
             </li>
             <li>
-              <Link to="page-dashboard-message.html">
+              <Link to="/dashboard/messages">
                 <i className="flaticon-chat mr10" />
                 Message
               </Link>
             </li>
             <li>
-              <Link to="page-dashboard-reviews.html">
+              <Link to="/dashboard/reviews">
                 <i className="flaticon-review-1 mr10" />
                 Reviews
               </Link>
             </li>
             <li>
-              <Link to="page-dashboard-invoice.html">
+              <Link to="/dashboard/invoice">
                 <i className="flaticon-receipt mr10" />
                 Invoice
               </Link>
             </li>
             <li>
-              <Link to="page-dashboard-payouts.html">
+              <Link to="/dashboard/payouts">
                 <i className="flaticon-dollar mr10" />
                 Payouts
-              </Link>
-            </li>
-            <li>
-              <Link to="page-dashboard-statement.html">
-                <i className="flaticon-web mr10" />
-                Statements
               </Link>
             </li>
             <li>
@@ -90,34 +74,22 @@ function MobileDashNav() {
               </p>
             </li>
             <li>
-              <Link to="page-dashboard-manage-service.html">
+              <Link to="/dashboard/services">
                 <i className="flaticon-presentation mr10" />
                 Manage Services
-              </Link>
-            </li>
-            <li>
-              <Link to="page-dashboard-manage-jobs.html">
-                <i className="flaticon-briefcase mr10" />
-                Manage Jobs
-              </Link>
-            </li>
-            <li>
-              <Link to="page-dashboard-manage-project.html">
-                <i className="flaticon-content mr10" />
-                Manage Project
               </Link>
             </li>
             <li>
               <p className="fz15 fw400 ff-heading mt30 pl30">Account</p>
             </li>
             <li>
-              <Link to="page-dashboard-profile.html">
+              <Link to="/dashboard/profile">
                 <i className="flaticon-photo mr10" />
                 My Profile
               </Link>
             </li>
             <li>
-              <Link to="page-login.html">
+              <Link to="/signin">
                 <i className="flaticon-logout mr10" />
                 Logout
               </Link>
