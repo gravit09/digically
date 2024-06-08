@@ -14,7 +14,7 @@ var chart = new Chart(ctx, {
         segmentShowStroke: true,
         segmentStrokeColor: "E8EAED",
         datasetStrokeWidth: 24,
-        backgroundColor: ["#1877F2", "#FFEDE8", "#FBF7ED"],
+        backgroundColor: ["#ffffff", "#FFEDE8", "#FBF7ED"],
         data: [50, 25, 25],
         responsive: true,
         borderWidth: 4,
@@ -61,7 +61,7 @@ var chart = new Chart(ctx, {
       {
         label: "Dataset",
         backgroundColor: "rgba(251, 247, 237, 0.9)",
-        borderColor: "#1877F2",
+        borderColor: "#ffffff",
         data: [148, 140, 210, 120, 160, 140, 190, 170, 135, 210, 180, 249],
       },
     ],

@@ -501,7 +501,7 @@ function AddService() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Freeio. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2023 CreativeLayers. All rights reserved.
                     </p>
                   </div>
                 </div>

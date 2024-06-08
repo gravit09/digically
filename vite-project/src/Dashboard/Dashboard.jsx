@@ -34,7 +34,7 @@ function Dashboard() {
               </a>
             </div>
             <div className="sidebar_list_item ">
-              <Link to="/messages" className="items-center">
+              <Link to="/dashboard/messages" className="items-center">
                 <i className="flaticon-chat mr15" />
                 Message
               </Link>
@@ -609,7 +609,7 @@ function Dashboard() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Freeio. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2023 CreativeLayers. All rights reserved.
                     </p>
                   </div>
                 </div>

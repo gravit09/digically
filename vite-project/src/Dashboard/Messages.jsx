@@ -242,7 +242,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms1.png"
+                              src="images/inbox/ms2.png"
                               alt="ms1.png"
                             />
                             <div className="d-sm-flex">
@@ -755,7 +755,7 @@ function Messages() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Freeio. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2023 CreativeLayers. All rights reserved.
                     </p>
                   </div>
                 </div>

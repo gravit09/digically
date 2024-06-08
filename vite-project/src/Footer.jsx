@@ -99,10 +99,10 @@ function Footer() {
                   <a href="#">Trust &amp; Safety</a>
                 </li>
                 <li>
-                  <a href="#">Selling on Freeio</a>
+                  <a href="#">Selling on Digically</a>
                 </li>
                 <li>
-                  <a href="#">Buying on Freeio</a>
+                  <a href="#">Buying on Digically</a>
                 </li>
               </ul>
             </div>
@@ -149,7 +149,7 @@ function Footer() {
           <div className="col-md-6">
             <div className="text-center text-lg-start">
               <p className="copyright-text mb-2 mb-md-0 text-white-light ff-heading">
-                © Freeio. 2023 CreativeLayers. All rights reserved.
+                © Digically. 2023 CreativeLayers. All rights reserved.
               </p>
             </div>
           </div>

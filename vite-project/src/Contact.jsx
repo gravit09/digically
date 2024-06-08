@@ -73,7 +73,7 @@ function Contact() {
                   </div>
                   <div className="details">
                     <h5 className="title">Email</h5>
-                    <p className="mb-0 text">hello@freeio.com</p>
+                    <p className="mb-0 text">hello@Digically.com</p>
                   </div>
                 </div>
               </div>
