@@ -69,7 +69,7 @@ function Dashboard() {
               </Link>
             </div>
             <div className="sidebar_list_item ">
-              <Link to="/signin" className="items-center">
+              <Link to="./signin" className="items-center">
                 <i className="flaticon-logout mr15" />
                 Logout
               </Link>
@@ -157,7 +157,7 @@ function Dashboard() {
                       <div className="list-thumb flex-shrink-0 bdrs4">
                         <img
                           className="w-100"
-                          src="images/listings/g-1.jpg"
+                          src="/images/listings/g-1.jpg"
                           alt=""
                         />
                       </div>
@@ -190,7 +190,7 @@ function Dashboard() {
                       <div className="list-thumb flex-shrink-0 bdrs4">
                         <img
                           className="w-100"
-                          src="images/listings/g-2.jpg"
+                          src="/images/listings/g-2.jpg"
                           alt=""
                         />
                       </div>
@@ -223,7 +223,7 @@ function Dashboard() {
                       <div className="list-thumb flex-shrink-0 bdrs4">
                         <img
                           className="w-100"
-                          src="images/listings/g-6.jpg"
+                          src="/images/listings/g-6.jpg"
                           alt=""
                         />
                       </div>
@@ -268,7 +268,7 @@ function Dashboard() {
                       <div className="list-thumb wa flex-shrink-0 bdrs4 mb15-lg">
                         <img
                           className="wa img-2"
-                          src="images/team/client-1.png"
+                          src="/images/team/client-1.png"
                           alt=""
                         />
                       </div>
@@ -299,7 +299,7 @@ function Dashboard() {
                       <div className="list-thumb wa flex-shrink-0 bdrs4 mb15-lg">
                         <img
                           className="wa img-2"
-                          src="images/team/client-3.png"
+                          src="/images/team/client-3.png"
                           alt=""
                         />
                       </div>
@@ -330,7 +330,7 @@ function Dashboard() {
                       <div className="list-thumb wa flex-shrink-0 bdrs4 mb15-lg">
                         <img
                           className="wa img-2"
-                          src="images/team/client-6.png"
+                          src="/images/team/client-6.png"
                           alt=""
                         />
                       </div>

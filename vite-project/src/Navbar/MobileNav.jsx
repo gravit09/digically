@@ -28,7 +28,7 @@ function MobileDashNav() {
         <div className="sidebar-content">
           <ul className="dropdown-content">
             <li>
-              <p className="fz15 fw400 ff-heading mt30 pl30">Start</p>
+              <p className="fz15 fw400 ff-heading mt30 pl30">Digically</p>
             </li>
             <li className="active">
               <Link to="/">

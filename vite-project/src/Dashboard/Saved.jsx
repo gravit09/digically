@@ -122,7 +122,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-1.jpg"
+                                  src="/images/listings/g-1.jpg"
                                   alt=""
                                 />
                                 <a
@@ -162,7 +162,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle wa"
-                                        src="images/team/fl-s-1.png"
+                                        src="/images/team/fl-s-1.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -186,7 +186,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-2.jpg"
+                                  src="/images/listings/g-2.jpg"
                                   alt=""
                                 />
                                 <a
@@ -226,7 +226,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle wa"
-                                        src="images/team/fl-s-2.png"
+                                        src="/images/team/fl-s-2.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -250,7 +250,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-3.jpg"
+                                  src="/images/listings/g-3.jpg"
                                   alt=""
                                 />
                                 <a
@@ -290,7 +290,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle"
-                                        src="images/team/fl-s-3.png"
+                                        src="/images/team/fl-s-3.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -314,7 +314,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-4.jpg"
+                                  src="/images/listings/g-4.jpg"
                                   alt=""
                                 />
                                 <a
@@ -354,7 +354,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle"
-                                        src="images/team/fl-s-4.png"
+                                        src="/images/team/fl-s-4.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -378,7 +378,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-1.jpg"
+                                  src="/images/listings/g-1.jpg"
                                   alt=""
                                 />
                                 <a
@@ -418,7 +418,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle wa"
-                                        src="images/team/fl-s-1.png"
+                                        src="/images/team/fl-s-1.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -442,7 +442,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-2.jpg"
+                                  src="/images/listings/g-2.jpg"
                                   alt=""
                                 />
                                 <a
@@ -482,7 +482,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle wa"
-                                        src="images/team/fl-s-2.png"
+                                        src="/images/team/fl-s-2.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -546,7 +546,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle"
-                                        src="images/team/fl-s-3.png"
+                                        src="/images/team/fl-s-3.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />
@@ -570,7 +570,7 @@ function Saved() {
                               <div className="list-thumb">
                                 <img
                                   className="w-100"
-                                  src="images/listings/g-4.jpg"
+                                  src="/images/listings/g-4.jpg"
                                   alt=""
                                 />
                                 <a
@@ -610,7 +610,7 @@ function Saved() {
                                     <span className="position-relative mr10">
                                       <img
                                         className="rounded-circle"
-                                        src="images/team/fl-s-4.png"
+                                        src="/images/team/fl-s-4.png"
                                         alt="Freelancer Photo"
                                       />
                                       <span className="online-badges" />

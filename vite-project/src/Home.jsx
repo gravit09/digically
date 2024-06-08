@@ -327,9 +327,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will design modern websites in figma or adobe xd
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -374,10 +374,10 @@ function Home() {
                     Design &amp; Creative
                   </p>
                   <h5 className="list-title line-clamp2">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will build a fully responsive design in HTML,CSS,
                       bootstrap, and javascript
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -421,9 +421,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will do mobile app development for ios and android
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -467,9 +467,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will design modern websites in figma or adobe xd
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -513,9 +513,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will design modern websites in figma or adobe xd
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -559,10 +559,10 @@ function Home() {
                     Design &amp; Creative
                   </p>
                   <h5 className="list-title line-clamp2">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will build a fully responsive design in HTML,CSS,
                       bootstrap, and javascript
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -606,9 +606,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will do mobile app development for ios and android
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -652,9 +652,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will design modern websites in figma or adobe xd
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -702,9 +702,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will design modern websites in figma or adobe xd
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -752,10 +752,10 @@ function Home() {
                     Design &amp; Creative
                   </p>
                   <h5 className="list-title line-clamp2">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will build a fully responsive design in HTML,CSS,
                       bootstrap, and javascript
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />
@@ -803,9 +803,9 @@ function Home() {
                     Web &amp; App Design
                   </p>
                   <h5 className="list-title">
-                    <a href="page-services-single.html">
+                    <Link to="/services">
                       I will do mobile app development for ios and android
-                    </a>
+                    </Link>
                   </h5>
                   <div className="review-meta d-flex align-items-center">
                     <i className="fas fa-star fz10 review-color me-2" />

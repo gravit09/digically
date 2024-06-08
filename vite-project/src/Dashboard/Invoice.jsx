@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ToggleContext } from "../App";
 
 function Invoice() {
+  const { show } = useContext(ToggleContext);
   return (
     <div className="dashboard_content_wrapper">
-      <div className="dashboard dashboard_wrapper pr30 pr0-xl">
+      <div
+        className={`dashboard dashboard_wrapper pr30 pr0-xl ${
+          show ? "" : "dsh_board_sidebar_hidden"
+        }`}
+      >
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
             <p className="fz15 fw400 ff-heading pl30">Start</p>
@@ -403,7 +410,7 @@ function Invoice() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Freeio. 2023 CreativeLayers. All rights reserved.
+                      © Freeio. 2023 . All rights reserved.
                     </p>
                   </div>
                 </div>

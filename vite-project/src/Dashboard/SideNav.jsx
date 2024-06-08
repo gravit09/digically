@@ -6,7 +6,7 @@ function SideNav() {
       <div className="dashboard dashboard_wrapper pr30 pr0-xl">
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
-            <p className="fz15 fw400 ff-heading pl30">Start</p>
+            <p className="fz15 fw400 ff-heading pl30">Digically</p>
             <div className="sidebar_list_item">
               <a href="page-dashboard.html" className="items-center -is-active">
                 <i className="flaticon-home mr15" />

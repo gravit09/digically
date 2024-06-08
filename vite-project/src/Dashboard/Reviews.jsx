@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ToggleContext } from "../App";
 
 function Reviews() {
+  const { show } = useContext(ToggleContext);
   return (
     <div className="dashboard_content_wrapper">
-      <div className="dashboard dashboard_wrapper pr30 pr0-xl">
+      <div
+        className={`dashboard dashboard_wrapper pr30 pr0-xl ${
+          show ? "" : "dsh_board_sidebar_hidden"
+        }`}
+      >
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
             <p className="fz15 fw400 ff-heading pl30">Start</p>
@@ -141,7 +148,7 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
@@ -149,7 +156,7 @@ function Reviews() {
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="d-flex align-items-center">
                                     <div>
                                       <i className="fas fa-star vam fz10 review-color me-2" />
@@ -185,7 +192,7 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
@@ -193,7 +200,7 @@ function Reviews() {
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="d-flex align-items-center">
                                     <div>
                                       <i className="fas fa-star vam fz10 review-color me-2" />
@@ -228,7 +235,7 @@ function Reviews() {
                           <div className="col-md-12">
                             <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                               <img
-                                src="images/blog/comments-2.png"
+                                src="/images/blog/comments-2.png"
                                 className="mr-3"
                                 alt="comments-2.png"
                               />
@@ -236,7 +243,7 @@ function Reviews() {
                                 <div className="del-edit">
                                   <span className="flaticon-flag" />
                                 </div>
-                                <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                <h6 className="mt-0 mb-1">jon doe</h6>
                                 <div className="d-flex align-items-center">
                                   <div>
                                     <i className="fas fa-star vam fz10 review-color me-2" />
@@ -278,7 +285,7 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
@@ -286,7 +293,7 @@ function Reviews() {
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="d-flex align-items-center">
                                     <div>
                                       <i className="fas fa-star vam fz10 review-color me-2" />
@@ -322,12 +329,12 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
                                 <div className="ml20 ml0-xs mt20-xs">
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
@@ -365,12 +372,12 @@ function Reviews() {
                           <div className="col-md-12">
                             <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                               <img
-                                src="images/blog/comments-2.png"
+                                src="/images/blog/comments-2.png"
                                 className="mr-3"
                                 alt="comments-2.png"
                               />
                               <div className="ml20 ml0-xs mt20-xs">
-                                <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                <h6 className="mt-0 mb-1">jon doe</h6>
                                 <div className="d-flex align-items-center">
                                   <div>
                                     <i className="fas fa-star vam fz10 review-color me-2" />
@@ -415,7 +422,7 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
@@ -423,7 +430,7 @@ function Reviews() {
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="d-flex align-items-center">
                                     <div>
                                       <i className="fas fa-star vam fz10 review-color me-2" />
@@ -459,7 +466,7 @@ function Reviews() {
                             <div className="bdrb1 pb20">
                               <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                                 <img
-                                  src="images/blog/comments-2.png"
+                                  src="/images/blog/comments-2.png"
                                   className="mr-3"
                                   alt="comments-2.png"
                                 />
@@ -467,7 +474,7 @@ function Reviews() {
                                   <div className="del-edit">
                                     <span className="flaticon-flag" />
                                   </div>
-                                  <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                  <h6 className="mt-0 mb-1">jon doe</h6>
                                   <div className="d-flex align-items-center">
                                     <div>
                                       <i className="fas fa-star vam fz10 review-color me-2" />
@@ -502,7 +509,7 @@ function Reviews() {
                           <div className="col-md-12">
                             <div className="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
                               <img
-                                src="images/blog/comments-2.png"
+                                src="/images/blog/comments-2.png"
                                 className="mr-3"
                                 alt="comments-2.png"
                               />
@@ -510,7 +517,7 @@ function Reviews() {
                                 <div className="del-edit">
                                   <span className="flaticon-flag" />
                                 </div>
-                                <h6 className="mt-0 mb-1">Ali Tufan</h6>
+                                <h6 className="mt-0 mb-1">jon doe</h6>
                                 <div className="d-flex align-items-center">
                                   <div>
                                     <i className="fas fa-star vam fz10 review-color me-2" />
@@ -555,7 +562,7 @@ function Reviews() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Freeio. 2023 CreativeLayers. All rights reserved.
+                      © Freeio. 2023 . All rights reserved.
                     </p>
                   </div>
                 </div>

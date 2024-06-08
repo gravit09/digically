@@ -112,7 +112,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms2.png"
+                              src="/images/inbox/ms2.png"
                               alt="ms1.png"
                             />
                             <div className="d-sm-flex">
@@ -134,7 +134,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms2.png"
+                              src="/images/inbox/ms2.png"
                               alt="ms2.png"
                             />
                             <div className="d-sm-flex">
@@ -157,7 +157,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms3.png"
+                              src="/images/inbox/ms3.png"
                               alt="ms3.png"
                             />
                             <div className="d-sm-flex">
@@ -180,7 +180,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms4.png"
+                              src="/images/inbox/ms4.png"
                               alt="ms4.png"
                             />
                             <div className="d-sm-flex">
@@ -202,7 +202,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms5.png"
+                              src="/images/inbox/ms5.png"
                               alt="ms5.png"
                             />
                             <div className="d-sm-flex">
@@ -225,7 +225,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms6.png"
+                              src="/images/inbox/ms6.png"
                               alt="ms6.png"
                             />
                             <div className="d-sm-flex">
@@ -247,7 +247,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms7.png"
+                              src="/images/inbox/ms7.png"
                               alt="ms7.png"
                             />
                             <div className="d-sm-flex">
@@ -270,7 +270,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms8.png"
+                              src="/images/inbox/ms8.png"
                               alt="ms8.png"
                             />
                             <div className="d-sm-flex">
@@ -292,7 +292,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms1.png"
+                              src="/images/inbox/ms1.png"
                               alt="ms1.png"
                             />
                             <div className="d-sm-flex">
@@ -314,7 +314,7 @@ function Messages() {
                           <div className="d-flex align-items-center position-relative">
                             <img
                               className="img-fluid float-start rounded-circle mr10"
-                              src="images/inbox/ms2.png"
+                              src="/images/inbox/ms2.png"
                               alt="ms2.png"
                             />
                             <div className="d-sm-flex">
@@ -341,7 +341,7 @@ function Messages() {
                     <div className="wrap">
                       <img
                         className="img-fluid mr10"
-                        src="images/inbox/ms3.png"
+                        src="/images/inbox/ms3.png"
                         alt="ms3.png"
                       />
                       <div className="meta d-sm-flex justify-content-sm-between align-items-center">
@@ -366,7 +366,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms4.png"
+                            src="/images/inbox/ms4.png"
                             alt="ms4.png"
                           />
                           <div className="title fz15">
@@ -386,7 +386,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms5.png"
+                            src="/images/inbox/ms5.png"
                             alt="ms5.png"
                           />
                         </div>
@@ -399,7 +399,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms5.png"
+                            src="/images/inbox/ms5.png"
                             alt="ms5.png"
                           />
                           <div className="title fz15">
@@ -416,7 +416,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms5.png"
+                            src="/images/inbox/ms5.png"
                             alt="ms5.png"
                           />
                         </div>
@@ -426,7 +426,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -440,7 +440,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -457,7 +457,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -474,7 +474,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms3.png"
+                            src="/images/inbox/ms3.png"
                             alt="ms3.png"
                           />
                         </div>
@@ -490,7 +490,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms3.png"
+                            src="/images/inbox/ms3.png"
                             alt="ms3.png"
                           />
                         </div>
@@ -503,7 +503,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms3.png"
+                            src="/images/inbox/ms3.png"
                             alt="ms3.png"
                           />
                         </div>
@@ -513,7 +513,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -527,7 +527,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -547,7 +547,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms3.png"
+                            src="/images/inbox/ms3.png"
                             alt="ms3.png"
                           />
                         </div>
@@ -560,7 +560,7 @@ function Messages() {
                           </div>
                           <img
                             className="img-fluid rounded-circle align-self-end ml10"
-                            src="images/inbox/ms3.png"
+                            src="/images/inbox/ms3.png"
                             alt="ms3.png"
                           />
                         </div>
@@ -570,7 +570,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -584,7 +584,7 @@ function Messages() {
                         <div className="d-flex align-items-center mb15">
                           <img
                             className="img-fluid rounded-circle align-self-start mr10"
-                            src="images/inbox/ms2.png"
+                            src="/images/inbox/ms2.png"
                             alt="ms2.png"
                           />
                           <div className="title fz15">
@@ -625,7 +625,7 @@ function Messages() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Digically. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2023 . All rights reserved.
                     </p>
                   </div>
                 </div>

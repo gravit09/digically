@@ -19,7 +19,7 @@ function DashNav() {
                 </div>
                 <div onClick={handleToggle} className="fz20 ml90">
                   <a href="#" className="dashboard_sidebar_toggle_icon vam">
-                    <img src="images/dashboard-navicon.svg" alt="" />
+                    <img src="/images/dashboard-navicon.svg" alt="" />
                   </a>
                 </div>
                 <a
@@ -59,35 +59,35 @@ function DashNav() {
                     <div className="dropdown-menu">
                       <div className="dboard_notific_dd px30 pt10 pb15">
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-1.png" alt="" />
+                          <img src="/images/resource/notif-1.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your resume</p>
                             <p className="text mb-0">updated!</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-2.png" alt="" />
+                          <img src="/images/resource/notif-2.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">You changed</p>
                             <p className="text mb-0">password</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-3.png" alt="" />
+                          <img src="/images/resource/notif-3.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your account has been</p>
                             <p className="text mb-0">created successfully</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-4.png" alt="" />
+                          <img src="/images/resource/notif-4.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">You applied for a job </p>
                             <p className="text mb-0">Front-end Developer</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center">
-                          <img src="images/resource/notif-5.png" alt="" />
+                          <img src="/images/resource/notif-5.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your course uploaded</p>
                             <p className="text mb-0">successfully</p>
@@ -110,11 +110,11 @@ function DashNav() {
                         <div className="notif_list d-flex align-items-start bdrb1 pb25 mb10">
                           <img
                             className="img-2"
-                            src="images/testimonials/testi-1.png"
+                            src="/images/testimonials/testi-1.png"
                             alt=""
                           />
                           <div className="details ml15">
-                            <p className="dark-color fw500 mb-2">Ali Tufan</p>
+                            <p className="dark-color fw500 mb-2">jon doe</p>
                             <p className="text mb-2">
                               Lorem ipsum dolor sit amet, consectetur
                               adipiscing.
@@ -125,11 +125,11 @@ function DashNav() {
                         <div className="notif_list d-flex align-items-start mb25">
                           <img
                             className="img-2"
-                            src="images/testimonials/testi-2.png"
+                            src="/images/testimonials/testi-2.png"
                             alt=""
                           />
                           <div className="details ml15">
-                            <p className="dark-color fw500 mb-2">Ali Tufan</p>
+                            <p className="dark-color fw500 mb-2">jon doe</p>
                             <p className="text mb-2">
                               Lorem ipsum dolor sit amet, consectetur
                               adipiscing.
@@ -161,35 +161,35 @@ function DashNav() {
                     <div className="dropdown-menu">
                       <div className="dboard_notific_dd px30 pt10 pb15">
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-1.png" alt="" />
+                          <img src="/images/resource/notif-1.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your resume</p>
                             <p className="text mb-0">updated!</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-2.png" alt="" />
+                          <img src="/images/resource/notif-2.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">You changed</p>
                             <p className="text mb-0">password</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-3.png" alt="" />
+                          <img src="/images/resource/notif-3.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your account has been</p>
                             <p className="text mb-0">created successfully</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                          <img src="images/resource/notif-4.png" alt="" />
+                          <img src="/images/resource/notif-4.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">You applied for a job </p>
                             <p className="text mb-0">Front-end Developer</p>
                           </div>
                         </div>
                         <div className="notif_list d-flex align-items-center">
-                          <img src="images/resource/notif-5.png" alt="" />
+                          <img src="/images/resource/notif-5.png" alt="" />
                           <div className="details ml10">
                             <p className="text mb-0">Your course uploaded</p>
                             <p className="text mb-0">successfully</p>
@@ -201,102 +201,16 @@ function DashNav() {
                   <li className="user_setting">
                     <div className="dropdown">
                       <a className="btn" href="#" data-bs-toggle="dropdown">
-                        <img src="images/resource/user.png" alt="user.png" />
+                        <img src="/images/resource/user.png" alt="user.png" />
                       </a>
                       <div className="dropdown-menu">
                         <div className="user_setting_content">
-                          <p className="fz15 fw400 ff-heading mb10 pl30">
-                            Start
-                          </p>
                           <a
                             className="dropdown-item active"
                             href="page-dashboard.html"
                           >
-                            <i className="flaticon-home mr10" />
-                            Dashboard
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-proposal.html"
-                          >
-                            <i className="flaticon-document mr10" />
-                            My Proposals
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-save.html"
-                          >
-                            <i className="flaticon-like mr10" />
-                            Saved
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-message.html"
-                          >
-                            <i className="flaticon-chat mr10" />
-                            Message
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-reviews.html"
-                          >
-                            <i className="flaticon-review-1 mr10" />
-                            Reviews
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-invoice.html"
-                          >
-                            <i className="flaticon-receipt mr10" />
-                            Invoice
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-payouts.html"
-                          >
-                            <i className="flaticon-dollar mr10" />
-                            Payouts
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-statement.html"
-                          >
-                            <i className="flaticon-web mr10" />
-                            Statements
-                          </a>
-                          <p className="fz15 fw400 ff-heading mt30 pl30">
-                            Organize and Manage
-                          </p>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-manage-service.html"
-                          >
-                            <i className="flaticon-presentation mr10" />
-                            Manage Services
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-manage-jobs.html"
-                          >
-                            <i className="flaticon-briefcase mr10" />
-                            Manage Jobs
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-favorites.html"
-                          >
-                            <i className="flaticon-content mr10" />
-                            Manage Project
-                          </a>
-                          <p className="fz15 fw400 ff-heading mt30 pl30">
-                            Account
-                          </p>
-                          <a
-                            className="dropdown-item"
-                            href="page-dashboard-profile.html"
-                          >
                             <i className="flaticon-photo mr10" />
-                            My Profile
+                            Profile
                           </a>
                           <a className="dropdown-item" href="page-login.html">
                             <i className="flaticon-logout mr10" />

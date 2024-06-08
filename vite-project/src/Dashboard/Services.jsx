@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ToggleContext } from "../App";
 
 function Services() {
+  const { show } = useContext(ToggleContext);
+
   return (
     <div className="dashboard_content_wrapper">
-      <div className="dashboard dashboard_wrapper pr30 pr0-xl">
+      <div
+        className={`dashboard dashboard_wrapper pr30 pr0-xl ${
+          show ? "" : "dsh_board_sidebar_hidden"
+        }`}
+      >
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
             <p className="fz15 fw400 ff-heading pl30">Start</p>
@@ -74,108 +82,6 @@ function Services() {
         <div className="dashboard__main pl0-md">
           <div className="dashboard__content hover-bgc-color">
             <div className="row pb40">
-              <div className="col-lg-12">
-                <div className="dashboard_navigationbar d-block d-lg-none">
-                  <div className="dropdown">
-                    <button onclick="myFunction()" className="dropbtn">
-                      <i className="fa fa-bars pr10" /> Dashboard Navigation
-                    </button>
-                    <ul id="myDropdown" className="dropdown-content">
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">Start</p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard.html">
-                          <i className="flaticon-home mr10" />
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-proposal.html">
-                          <i className="flaticon-document mr10" />
-                          My Proposals
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-save.html">
-                          <i className="flaticon-like mr10" />
-                          Saved
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-message.html">
-                          <i className="flaticon-chat mr10" />
-                          Message
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-reviews.html">
-                          <i className="flaticon-review-1 mr10" />
-                          Reviews
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-invoice.html">
-                          <i className="flaticon-receipt mr10" />
-                          Invoice
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-payouts.html">
-                          <i className="flaticon-dollar mr10" />
-                          Payouts
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-statement.html">
-                          <i className="flaticon-web mr10" />
-                          Statements
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Organize and Manage
-                        </p>
-                      </li>
-                      <li className="active">
-                        <a href="page-dashboard-manage-service.html">
-                          <i className="flaticon-presentation mr10" />
-                          Manage Services
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-jobs.html">
-                          <i className="flaticon-briefcase mr10" />
-                          Manage Jobs
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-project.html">
-                          <i className="flaticon-content mr10" />
-                          Manage Project
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Account
-                        </p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-profile.html">
-                          <i className="flaticon-photo mr10" />
-                          My Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-login.html">
-                          <i className="flaticon-logout mr10" />
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
               <div className="col-lg-9">
                 <div className="dashboard_title_area">
                   <h2>Manage Services</h2>
@@ -295,7 +201,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-1.jpg"
+                                        src="/images/listings/g-1.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -356,7 +262,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-2.jpg"
+                                        src="/images/listings/g-2.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -417,7 +323,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-3.jpg"
+                                        src="/images/listings/g-3.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -478,7 +384,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-4.jpg"
+                                        src="/images/listings/g-4.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -539,7 +445,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-5.jpg"
+                                        src="/images/listings/g-5.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -677,7 +583,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-1.jpg"
+                                        src="/images/listings/g-1.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -738,7 +644,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-2.jpg"
+                                        src="/images/listings/g-2.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -799,7 +705,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-3.jpg"
+                                        src="/images/listings/g-3.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -860,7 +766,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-4.jpg"
+                                        src="/images/listings/g-4.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -921,7 +827,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-5.jpg"
+                                        src="/images/listings/g-5.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1059,7 +965,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-1.jpg"
+                                        src="/images/listings/g-1.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1120,7 +1026,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-2.jpg"
+                                        src="/images/listings/g-2.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1181,7 +1087,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-3.jpg"
+                                        src="/images/listings/g-3.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1242,7 +1148,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-4.jpg"
+                                        src="/images/listings/g-4.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1303,7 +1209,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-5.jpg"
+                                        src="/images/listings/g-5.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1441,7 +1347,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-1.jpg"
+                                        src="/images/listings/g-1.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1502,7 +1408,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-2.jpg"
+                                        src="/images/listings/g-2.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1563,7 +1469,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-3.jpg"
+                                        src="/images/listings/g-3.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1624,7 +1530,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-4.jpg"
+                                        src="/images/listings/g-4.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1685,7 +1591,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-5.jpg"
+                                        src="/images/listings/g-5.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1823,7 +1729,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-1.jpg"
+                                        src="/images/listings/g-1.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1884,7 +1790,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-2.jpg"
+                                        src="/images/listings/g-2.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -1945,7 +1851,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-3.jpg"
+                                        src="/images/listings/g-3.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -2006,7 +1912,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-4.jpg"
+                                        src="/images/listings/g-4.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -2067,7 +1973,7 @@ function Services() {
                                     <div className="list-thumb flex-shrink-0 bdrs4 mb10-lg">
                                       <img
                                         className="w-100"
-                                        src="images/listings/g-5.jpg"
+                                        src="/images/listings/g-5.jpg"
                                         alt=""
                                       />
                                     </div>
@@ -2191,7 +2097,7 @@ function Services() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Digically. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2023 . All rights reserved.
                     </p>
                   </div>
                 </div>
