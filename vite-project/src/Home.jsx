@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://139.84.175.38/gigs");
+        if (response.data && response.data.data) {
+          const gigs = response.data.data;
+          const gigsWithImages = gigs.map((gig) => {
+            if (gig.media && gig.media.length > 0) {
+              const imageUri = gig.media[0].uri;
+              const imageUrl = `http://139.84.175.38/gigs/media/${gig.gigId}/${imageUri}`;
+              return {
+                ...gig,
+                imageUrl,
+              };
+            }
+            return gig;
+          });
+          setData(gigsWithImages); // Update state with gigs including imageUrls
+        }
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        setError("Failed to fetch data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <>
       <section className=" mt-40 pt30 pb90 ">
@@ -268,574 +306,65 @@ function Home() {
             </div>
           </div>
           <div className="row">
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-5.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-1.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
+            {data.map((item) => (
+              <div key={item._id} className="col-sm-6 col-xl-3">
+                <div className="listing-style1">
+                  <div className="list-thumb">
+                    {item.imageUrl ? (
+                      <img
+                        className="w-100"
+                        src={item.imageUrl}
+                        alt={item.title}
+                      />
+                    ) : (
+                      <p>No Image Available</p>
+                    )}
+                    <a href="#" className="listing-fav fz12">
+                      <span className="far fa-heart" />
                     </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
+                  </div>
+                  <div className="list-content">
+                    <p className="list-text body-color fz14 mb-1">
+                      {item.category}
+                    </p>
+                    <h5 className="list-title">
+                      <Link to="/services">{item.title}</Link>
+                    </h5>
+                    <div className="review-meta d-flex align-items-center">
+                      <i className="fas fa-star fz10 review-color me-2" />
+                      <p className="mb-0 body-color fz14">
+                        <span className="dark-color me-2">
+                          {item.rating.toFixed(2)}
+                        </span>
+                        {`${item.totalRatings} reviews`}
                       </p>
+                    </div>
+                    <hr className="my-2" />
+                    <div className="list-meta d-flex justify-content-between align-items-center mt15">
+                      <a href="#">
+                        <span className="position-relative mr10">
+                          <img
+                            className="rounded-circle"
+                            src="images/team/fl-s-1.png"
+                            alt="Freelancer Photo"
+                          />
+                          <span className="online-badge" />
+                        </span>
+                        <span className="fz14">{item.by}</span>
+                      </a>
+                      <div className="budget">
+                        <p className="mb-0 body-color">
+                          Cost:
+                          <span className="fz17 fw500 dark-color ms-1">
+                            {item.cost} digic
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-1.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-1.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-3.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Design &amp; Creative
-                  </p>
-                  <h5 className="list-title line-clamp2">
-                    <Link to="/services">
-                      I will build a fully responsive design in HTML,CSS,
-                      bootstrap, and javascript
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-3.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-4.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will do mobile app development for ios and android
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-4.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-5.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-1.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-6.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-2.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-7.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Design &amp; Creative
-                  </p>
-                  <h5 className="list-title line-clamp2">
-                    <Link to="/services">
-                      I will build a fully responsive design in HTML,CSS,
-                      bootstrap, and javascript
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-3.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-8.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will do mobile app development for ios and android
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-4.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img className="w-100" src="images/listings/g-9.jpg" alt="" />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-1.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img
-                    className="w-100"
-                    src="images/listings/g-10.jpg"
-                    alt=""
-                  />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will design modern websites in figma or adobe xd
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-2.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img
-                    className="w-100"
-                    src="images/listings/g-11.jpg"
-                    alt=""
-                  />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Design &amp; Creative
-                  </p>
-                  <h5 className="list-title line-clamp2">
-                    <Link to="/services">
-                      I will build a fully responsive design in HTML,CSS,
-                      bootstrap, and javascript
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-3.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-xl-3">
-              <div className="listing-style1">
-                <div className="list-thumb">
-                  <img
-                    className="w-100"
-                    src="images/listings/g-12.jpg"
-                    alt=""
-                  />
-                  <a href="#" className="listing-fav fz12">
-                    <span className="far fa-heart" />
-                  </a>
-                </div>
-                <div className="list-content">
-                  <p className="list-text body-color fz14 mb-1">
-                    Web &amp; App Design
-                  </p>
-                  <h5 className="list-title">
-                    <Link to="/services">
-                      I will do mobile app development for ios and android
-                    </Link>
-                  </h5>
-                  <div className="review-meta d-flex align-items-center">
-                    <i className="fas fa-star fz10 review-color me-2" />
-                    <p className="mb-0 body-color fz14">
-                      <span className="dark-color me-2">4.82</span>94 reviews
-                    </p>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="list-meta d-flex justify-content-between align-items-center mt15">
-                    <a href="#">
-                      <span className="position-relative mr10">
-                        <img
-                          className="rounded-circle"
-                          src="images/team/fl-s-4.png"
-                          alt="Freelancer Photo"
-                        />
-                        <span className="online-badge" />
-                      </span>
-                      <span className="fz14">Wanda Runo</span>
-                    </a>
-                    <div className="budget">
-                      <p className="mb-0 body-color">
-                        Starting at
-                        <span className="fz17 fw500 dark-color ms-1">$983</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="row">
             <div className="mbp_pagination mt30 text-center">
@@ -846,14 +375,14 @@ function Home() {
                     <span className="fas fa-angle-left" />
                   </a>
                 </li>
-                <li className="page-item">
+                <li className="page-item active">
                   <a className="page-link" href="#">
-                    1
+                    1 <span className="sr-only">(current)</span>
                   </a>
                 </li>
-                <li className="page-item active" aria-current="page">
+                <li className="page-item" aria-current="page">
                   <a className="page-link" href="#">
-                    2 <span className="sr-only">(current)</span>
+                    2
                   </a>
                 </li>
                 <li className="page-item">

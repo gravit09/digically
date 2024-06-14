@@ -93,7 +93,7 @@ function Services() {
               <div className="col-lg-3">
                 <div className="text-lg-end">
                   <Link
-                    to="/AddServices"
+                    to="/dashboard/addServices"
                     className="ud-btn btn-dark default-box-shadow2"
                   >
                     Add Service

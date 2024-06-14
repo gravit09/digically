@@ -1,24 +1,103 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios"; // Import axios for making HTTP requests
+import { ToggleContext } from "../App";
+import "./gallery.css";
 
 function AddService() {
+  const { show } = useContext(ToggleContext);
+  const [formState, setFormState] = useState({
+    title: "",
+    price: "",
+    maxPendingOrder: "",
+    deliveryTime: "",
+    tags: [],
+    desc: "",
+    images: [],
+    category: "",
+  });
+
+  // Function to handle changes in tags input
+  const handleTagsChange = (e) => {
+    const tags = e.target.value.split(" ").filter((tag) => tag.trim() !== "");
+    setFormState((prevState) => ({
+      ...prevState,
+      tags,
+    }));
+  };
+
+  // Function to handle changes in form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  // Function to handle changes in image upload
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+    const totalImages = formState.images.length + files.length;
+    if (totalImages > 5) {
+      alert("You can only upload a maximum of 5 images");
+      return;
+    }
+    setFormState((prevState) => ({
+      ...prevState,
+      images: [...prevState.images, ...files],
+    }));
+  };
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("files", formData.images);
+    formData.images = null;
+    formData.append("data", JSON.stringify(formData));
+
+    try {
+      // Make API call to create gig
+      const response = await axios.post(
+        "http://139.84.175.38/Create/gigs",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      // Handle success scenario
+      console.log("Gig created successfully:", response.data);
+      // You can redirect or show a success message here
+    } catch (error) {
+      // Handle error scenario
+      console.error("Error creating gig:", error);
+      // You can show an error message to the user
+    }
+  };
+
   return (
     <div className="dashboard_content_wrapper">
-      <div className="dashboard dashboard_wrapper pr30 pr0-xl">
+      <div
+        className={`dashboard dashboard_wrapper pr30 pr0-xl ${
+          show ? "" : "dsh_board_sidebar_hidden"
+        }`}
+      >
         <div className="dashboard__sidebar d-none d-lg-block">
           <div className="dashboard_sidebar_list">
             <p className="fz15 fw400 ff-heading pl30">Start</p>
             <div className="sidebar_list_item">
-              <a href="page-dashboard.html" className="items-center">
+              <Link to="/dashboard" className="items-center">
                 <i className="flaticon-home mr15" />
                 Dashboard
-              </a>
+              </Link>
             </div>
-            <div className="sidebar_list_item">
-              <a href="page-dashboard-proposal.html" className="items-center">
-                <i className="flaticon-document mr15" />
-                My Proposals
-              </a>
-            </div>
+
             <div className="sidebar_list_item">
               <a href="page-dashboard-save.html" className="items-center">
                 <i className="flaticon-like mr15" />
@@ -49,12 +128,7 @@ function AddService() {
                 Payouts
               </a>
             </div>
-            <div className="sidebar_list_item">
-              <a href="page-dashboard-statement.html" className="items-center">
-                <i className="flaticon-web mr15" />
-                Statements
-              </a>
-            </div>
+
             <p className="fz15 fw400 ff-heading pl30 mt30">
               Organize and Manage
             </p>
@@ -65,24 +139,6 @@ function AddService() {
               >
                 <i className="flaticon-presentation mr15" />
                 Manage Services
-              </a>
-            </div>
-            <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-manage-jobs.html"
-                className="items-center"
-              >
-                <i className="flaticon-briefcase mr15" />
-                Manage Jobs
-              </a>
-            </div>
-            <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-manage-project.html"
-                className="items-center"
-              >
-                <i className="flaticon-content mr15" />
-                Manage Project
               </a>
             </div>
             <p className="fz15 fw400 ff-heading pl30 mt30">Account</p>
@@ -106,122 +162,17 @@ function AddService() {
         <div className="dashboard__main pl0-md">
           <div className="dashboard__content hover-bgc-color">
             <div className="row pb40">
-              <div className="col-lg-12 d-none d-lg-flex">
-                <div className="dashboard_navigationbar d-block d-lg-none">
-                  <div className="dropdown">
-                    <button onclick="myFunction()" className="dropbtn">
-                      <i className="fa fa-bars pr10" /> Dashboard Navigation
-                    </button>
-                    <ul id="myDropdown" className="dropdown-content">
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">Start</p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard.html">
-                          <i className="flaticon-home mr10" />
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-proposal.html">
-                          <i className="flaticon-document mr10" />
-                          My Proposals
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-save.html">
-                          <i className="flaticon-like mr10" />
-                          Saved
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-message.html">
-                          <i className="flaticon-chat mr10" />
-                          Message
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-reviews.html">
-                          <i className="flaticon-review-1 mr10" />
-                          Reviews
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-invoice.html">
-                          <i className="flaticon-receipt mr10" />
-                          Invoice
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-payouts.html">
-                          <i className="flaticon-dollar mr10" />
-                          Payouts
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-statement.html">
-                          <i className="flaticon-web mr10" />
-                          Statements
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Organize and Manage
-                        </p>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-service.html">
-                          <i className="flaticon-presentation mr10" />
-                          Manage Services
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-jobs.html">
-                          <i className="flaticon-briefcase mr10" />
-                          Manage Jobs
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-dashboard-manage-project.html">
-                          <i className="flaticon-content mr10" />
-                          Manage Project
-                        </a>
-                      </li>
-                      <li>
-                        <p className="fz15 fw400 ff-heading mt30 pl30">
-                          Account
-                        </p>
-                      </li>
-                      <li className="active">
-                        <a href="page-dashboard-profile.html">
-                          <i className="flaticon-photo mr10" />
-                          My Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a href="page-login.html">
-                          <i className="flaticon-logout mr10" />
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
               <div className="col-lg-9">
                 <div className="dashboard_title_area">
                   <h2>Add Services</h2>
-                  <p className="text">
-                    Lorem ipsum dolor sit amet, consectetur.
-                  </p>
                 </div>
               </div>
               <div className="col-lg-3">
                 <div className="text-lg-end">
-                  <a href="#" className="ud-btn btn-dark">
+                  <button onClick={handleSubmit} className="ud-btn btn-dark">
                     Save &amp; Publish
                     <i className="fal fa-arrow-right-long" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -240,9 +191,12 @@ function AddService() {
                               Service Title
                             </label>
                             <input
+                              name="title"
+                              onChange={handleChange}
+                              value={formState.title}
                               type="text"
                               className="form-control"
-                              placeholder="i will"
+                              placeholder="Service Title"
                             />
                           </div>
                         </div>
@@ -252,9 +206,12 @@ function AddService() {
                               Price
                             </label>
                             <input
-                              type="email"
+                              name="price"
+                              onChange={handleChange}
+                              value={formState.price}
+                              type="number"
                               className="form-control"
-                              placeholder="$10"
+                              placeholder="Price"
                             />
                           </div>
                         </div>
@@ -263,7 +220,28 @@ function AddService() {
                             <label className="heading-color ff-heading fw500 mb10">
                               Maximum Pending Order
                             </label>
-                            <input type="text" className="form-control" />
+                            <input
+                              name="maxPendingOrder"
+                              type="number"
+                              onChange={handleChange}
+                              value={formState.maxPendingOrder}
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-sm-6">
+                          <div className="mb20">
+                            <label className="heading-color ff-heading fw500 mb10">
+                              Category
+                            </label>
+                            <input
+                              name="category"
+                              type="text"
+                              onChange={handleChange}
+                              value={formState.category}
+                              className="form-control"
+                              placeholder="Category"
+                            />
                           </div>
                         </div>
                         <div className="col-sm-6">
@@ -272,13 +250,15 @@ function AddService() {
                               Delivery Time
                             </label>
                             <input
-                              type="text"
+                              name="deliveryTime"
+                              type="number"
                               className="form-control"
-                              placeholder="eg:- 3 days"
+                              placeholder="Delivery Time"
+                              onChange={handleChange}
+                              value={formState.deliveryTime}
                             />
                           </div>
                         </div>
-
                         <div className="col-md-12">
                           <div className="mb10">
                             <label className="heading-color ff-heading fw500 mb10">
@@ -286,22 +266,9 @@ function AddService() {
                             </label>
                             <textarea
                               cols={30}
-                              rows={6}
-                              placeholder="Add tags related to your Project"
-                              defaultValue={""}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-12">
-                          <div className="mb10">
-                            <label className="heading-color ff-heading fw500 mb10">
-                              Message To Buyer
-                            </label>
-                            <textarea
-                              cols={30}
-                              rows={6}
-                              placeholder="Add a Message To The Buyer"
-                              defaultValue={""}
+                              rows={3}
+                              placeholder="Add tags separated by spaces"
+                              onChange={handleTagsChange}
                             />
                           </div>
                         </div>
@@ -311,185 +278,84 @@ function AddService() {
                               Description
                             </label>
                             <textarea
+                              name="desc"
                               cols={30}
                               rows={6}
+                              onChange={handleChange}
+                              value={formState.desc}
                               placeholder="Description"
-                              defaultValue={""}
                             />
-                          </div>
-                        </div>
-                        <div className="col-md-12">
-                          <div className="text-start">
-                            <a
-                              className="ud-btn btn-thm"
-                              href="page-contact.html"
-                            >
-                              Save
-                              <i className="fal fa-arrow-right-long" />
-                            </a>
                           </div>
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
-
                 <div className="ps-widget bgc-white bdrs12 p30 mb30 overflow-hidden position-relative">
                   <div className="bdrb1 pb15 mb30">
-                    <h5 className="list-title">Gallery</h5>
+                    <h5 className="list-title">Images</h5>
                   </div>
                   <div className="col-xl-9">
-                    <div className="d-flex mb30">
-                      <div className="gallery-item me-3 bdrs4 overflow-hidden position-relative">
-                        <img
-                          className="w-100"
-                          src="images/gallery/g-1.jpg"
-                          alt=""
-                        />
-                        <div className="del-edit">
-                          <div className="d-flex justify-content-center">
-                            <a
-                              href="#"
-                              className="icon me-2"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Edit"
-                              aria-label="Edit"
-                            >
-                              <span className="flaticon-pencil" />
-                            </a>
-                            <a
-                              href="#"
-                              className="icon"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Delete"
-                              aria-label="Delete"
-                            >
-                              <span className="flaticon-delete" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="gallery-item me-3 bdrs4 overflow-hidden position-relative">
-                        <img
-                          className="w-100"
-                          src="images/gallery/g-2.jpg"
-                          alt=""
-                        />
-                        <div className="del-edit">
-                          <div className="d-flex justify-content-center">
-                            <a
-                              href="#"
-                              className="icon me-2"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Edit"
-                              aria-label="Edit"
-                            >
-                              <span className="flaticon-pencil" />
-                            </a>
-                            <a
-                              href="#"
-                              className="icon"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Delete"
-                              aria-label="Delete"
-                            >
-                              <span className="flaticon-delete" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="gallery-item me-3 bdrs4 overflow-hidden position-relative">
-                        <img
-                          className="w-100"
-                          src="images/gallery/g-3.jpg"
-                          alt=""
-                        />
-                        <div className="del-edit">
-                          <div className="d-flex justify-content-center">
-                            <a
-                              href="#"
-                              className="icon me-2"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Edit"
-                              aria-label="Edit"
-                            >
-                              <span className="flaticon-pencil" />
-                            </a>
-                            <a
-                              href="#"
-                              className="icon"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Delete"
-                              aria-label="Delete"
-                            >
-                              <span className="flaticon-delete" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="gallery-item me-3 bdrs4 overflow-hidden position-relative">
-                        <img
-                          className="w-100"
-                          src="images/gallery/g-4.jpg"
-                          alt=""
-                        />
-                        <div className="del-edit">
-                          <div className="d-flex justify-content-center">
-                            <a
-                              href="#"
-                              className="icon me-2"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Edit"
-                              aria-label="Edit"
-                            >
-                              <span className="flaticon-pencil" />
-                            </a>
-                            <a
-                              href="#"
-                              className="icon"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-bs-original-title="Delete"
-                              aria-label="Delete"
-                            >
-                              <span className="flaticon-delete" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="gallery-item bdrs4 overflow-hidden">
-                        <a href="#">
+                    <div className="gallery-grid mb30">
+                      {formState.images.length === 0 && (
+                        <p>No images selected</p>
+                      )}
+                      {formState.images.map((image, index) => (
+                        <div
+                          key={index}
+                          className="gallery-item bdrs4 overflow-hidden position-relative"
+                        >
                           <img
-                            className="w-100"
-                            src="images/gallery/g-1.png"
-                            alt=""
+                            className="gallery-img"
+                            src={URL.createObjectURL(image)}
+                            alt={`Preview ${index}`}
                           />
-                        </a>
-                      </div>
+                          <div className="del-edit">
+                            <div className="d-flex justify-content-center">
+                              <button
+                                type="button"
+                                className="icon me-2"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Edit"
+                                aria-label="Edit"
+                              >
+                                <span className="flaticon-pencil" />
+                              </button>
+                              <button
+                                type="button"
+                                className="icon"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Delete"
+                                aria-label="Delete"
+                                onClick={() => {
+                                  setFormState((prevState) => ({
+                                    ...prevState,
+                                    images: prevState.images.filter(
+                                      (_, i) => i !== index
+                                    ),
+                                  }));
+                                }}
+                              >
+                                <span className="flaticon-delete" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                     <p className="text">
-                      Max file size is 1MB, Minimum dimension: 330x300 And
-                      Suitable files are .jpg &amp; .png
+                      Max file size is 1MB, Minimum dimension: 330x300. Suitable
+                      files are .jpg &amp; .png
                     </p>
-                    <a href="#" className="ud-btn btn-thm mt-2">
-                      Save
-                      <i className="fal fa-arrow-right-long" />
-                    </a>
+                    <input
+                      type="file"
+                      className="form-control"
+                      multiple
+                      onChange={handleImageChange}
+                      accept=".jpg, .png"
+                    />
                   </div>
                 </div>
               </div>
@@ -501,7 +367,7 @@ function AddService() {
                 <div className="col-auto">
                   <div className="copyright-widget">
                     <p className="mb-md-0">
-                      © Digically. 2023 CreativeLayers. All rights reserved.
+                      © Digically. 2024. All rights reserved.
                     </p>
                   </div>
                 </div>
