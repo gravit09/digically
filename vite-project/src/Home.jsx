@@ -10,13 +10,13 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://139.84.175.38/gigs");
+        const response = await axios.get("/api/gigs");
         if (response.data && response.data.data) {
           const gigs = response.data.data;
           const gigsWithImages = gigs.map((gig) => {
             if (gig.media && gig.media.length > 0) {
               const imageUri = gig.media[0].uri;
-              const imageUrl = `http://139.84.175.38/gigs/media/${gig.gigId}/${imageUri}`;
+              const imageUrl = `/api/gigs/media/${gig.gigId}/${imageUri}`;
               return {
                 ...gig,
                 imageUrl,

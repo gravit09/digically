@@ -61,15 +61,11 @@ function AddService() {
 
     try {
       // Make API call to create gig
-      const response = await axios.post(
-        "http://139.84.175.38/Create/gigs",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("/api/Create/gigs", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       // Handle success scenario
       console.log("Gig created successfully:", response.data);
@@ -77,7 +73,6 @@ function AddService() {
     } catch (error) {
       // Handle error scenario
       console.error("Error creating gig:", error);
-      // You can show an error message to the user
     }
   };
 

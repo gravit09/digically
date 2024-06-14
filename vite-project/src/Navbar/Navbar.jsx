@@ -1055,15 +1055,15 @@ function Navbar() {
               <div className="listings_category_nav_list_menu">
                 <ul className="mb0 d-flex ps-0">
                   <li>
-                    <a href="#">All Categories</a>
+                    <a className="active" href="#">
+                      All Categories
+                    </a>
                   </li>
                   <li>
                     <a href="#">Graphics &amp; Design</a>
                   </li>
                   <li>
-                    <a className="active" href="#">
-                      Digital Marketing
-                    </a>
+                    <a href="#">Digital Marketing</a>
                   </li>
                   <li>
                     <a href="#">Writing &amp; Translation</a>

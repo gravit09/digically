@@ -64,7 +64,7 @@ function SignUp() {
       setErrors(validationErrors);
     } else {
       try {
-        const response = await fetch("http://139.84.175.38/register", {
+        const response = await fetch("/api/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

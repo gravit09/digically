@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import validator from "validator";
 function SignIn() {
   const [formState, setFormState] = useState({
     UserName: "",
@@ -33,14 +33,18 @@ function SignIn() {
       setErrors(validationErrors);
     } else {
       try {
-        const response = await fetch("http://139.84.175.38/login", {
+        const response = await fetch("/api/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            UserName: formState.UserName,
-            EmailID: formState.EmailID,
+            UserName: validator.isEmail(formState.UserName)
+              ? ""
+              : formState.UserName,
+            EmailID: validator.isEmail(formState.UserName)
+              ? formState.UserName
+              : "",
             Password: formState.Password,
           }),
         });
