@@ -1,17 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { GigContext } from "./GigContext";
 
 function Home() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { setSelectedGigId } = useContext(GigContext);
-
-  const handleViewGigDetails = (gigId) => {
-    setSelectedGigId(gigId);
-  };
 
   useEffect(() => {
     const fetchData = async () => {

@@ -3,9 +3,9 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
 import axios from "axios";
-import { GigContext } from "./GigContext";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function Service() {
   //const { selectedGigId } = useContext(GigContext);

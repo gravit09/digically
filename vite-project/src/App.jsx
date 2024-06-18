@@ -18,8 +18,8 @@ import Profile from "./Dashboard/Profile";
 import Reviews from "./Dashboard/Reviews";
 import Saved from "./Dashboard/Saved";
 import Invoice from "./Dashboard/Invoice";
-import { GigProvider } from "./GigContext";
 import OrderCompleted from "./OrderCompleted";
+import { AuthProvider } from "./AuthProvider";
 
 export const ToggleContext = createContext();
 
@@ -127,11 +127,11 @@ function App() {
   ]);
 
   return (
-    <GigProvider>
+    <AuthProvider>
       <ToggleContext.Provider value={{ handleToggle, show }}>
         <RouterProvider router={router} />
       </ToggleContext.Provider>
-    </GigProvider>
+    </AuthProvider>
   );
 }
 
