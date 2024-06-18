@@ -1,23 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useAuth } from "../AuthProvider";
 function Navbar() {
-  const [isLoggedIn, SetIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await axios.get(`/api/authenticate`);
-        if (response.data.success == true) {
-          SetIsLoggedIn(true);
-          console.log(response.data.success);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    checkAuth();
-  }, []);
+  const { isAuthenticated } = useAuth();
 
   return (
     <>
@@ -1052,7 +1037,7 @@ function Navbar() {
                   className="ace-responsive-menu"
                   data-menu-style="horizontal"
                 ></ul>
-                {isLoggedIn ? (
+                {isAuthenticated ? (
                   <Link className="login-info mr15-lg mr30" to="/dashboard">
                     Dashboard
                   </Link>

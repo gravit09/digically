@@ -5,10 +5,10 @@ import OwlCarousel from "react-owl-carousel";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
+import { useAuth } from "./AuthProvider";
 
 function Service() {
-  //const { selectedGigId } = useContext(GigContext);
+  const { userName } = useAuth();
   const [gigDetails, setGigDetails] = useState(null);
 
   const { gigid } = useParams();
@@ -687,13 +687,17 @@ function Service() {
                               className="d-grid"
                               onClick={() => handleOrder(gigDetails.gigId)}
                             >
-                              <Link
-                                to="/orderCompleted"
-                                className="ud-btn btn-thm"
-                              >
-                                Continue {gigDetails.cost} digics
-                                <i className="fal fa-arrow-right-long" />
-                              </Link>
+                              {gigDetails.by == userName ? (
+                                <h3>Owner</h3>
+                              ) : (
+                                <Link
+                                  to="/orderCompleted"
+                                  className="ud-btn btn-thm"
+                                >
+                                  Continue {gigDetails.cost} digics
+                                  <i className="fal fa-arrow-right-long" />
+                                </Link>
+                              )}
                             </div>
                           </div>
                         </div>

@@ -20,6 +20,7 @@ import Saved from "./Dashboard/Saved";
 import Invoice from "./Dashboard/Invoice";
 import OrderCompleted from "./OrderCompleted";
 import { AuthProvider } from "./AuthProvider";
+import ProtectedRoute from "./ProtectedRoute";
 
 export const ToggleContext = createContext();
 
@@ -72,7 +73,11 @@ function App() {
     },
     {
       path: "/dashboard",
-      element: <DashboardLayout />,
+      element: (
+        <ProtectedRoute>
+          <DashboardLayout />
+        </ProtectedRoute>
+      ),
       children: [
         {
           path: "/dashboard",
@@ -114,7 +119,7 @@ function App() {
     },
     {
       path: "/login",
-      element: <Home />,
+      element: <SignIn />, // Changed to SignIn component
     },
     {
       path: "/signup",
