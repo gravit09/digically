@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { GigContext } from "./GigContext";
 
 function Home() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { setSelectedGigId } = useContext(GigContext);
+
+  const handleViewGigDetails = (gigId) => {
+    setSelectedGigId(gigId);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -328,7 +334,7 @@ function Home() {
                       {item.category}
                     </p>
                     <h5 className="list-title">
-                      <Link to="/services">{item.title}</Link>
+                      <Link to={`/services/${item.gigId}`}>{item.title}</Link>
                     </h5>
                     <div className="review-meta d-flex align-items-center">
                       <i className="fas fa-star fz10 review-color me-2" />

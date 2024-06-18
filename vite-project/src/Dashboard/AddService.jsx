@@ -53,11 +53,27 @@ function AddService() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Prepare form data
+    // Create a new instance of FormData
     const formData = new FormData();
-    formData.append("files", formData.images);
-    formData.images = null;
-    formData.append("data", JSON.stringify(formData));
+
+    // Append images to formData
+    formState.images.forEach((image) => {
+      formData.append("files[]", image);
+    });
+
+    // Append other form data
+    formData.set(
+      "data",
+      JSON.stringify({
+        title: formState.title,
+        cost: formState.price,
+        description: formState.desc,
+        tags: formState.tags,
+        deliveryTime: formState.deliveryTime,
+        category: formState.category,
+        maxPendingOrders: formState.maxPendingOrder,
+      })
+    );
 
     try {
       // Make API call to create gig
@@ -65,17 +81,16 @@ function AddService() {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        withCredentials: true,
       });
 
       // Handle success scenario
       console.log("Gig created successfully:", response.data);
-      // You can redirect or show a success message here
     } catch (error) {
       // Handle error scenario
       console.error("Error creating gig:", error);
     }
   };
-
   return (
     <div className="dashboard_content_wrapper">
       <div
@@ -130,7 +145,7 @@ function AddService() {
             <div className="sidebar_list_item ">
               <a
                 href="page-dashboard-manage-service.html"
-                className="items-center"
+                className="items-center -is-active"
               >
                 <i className="flaticon-presentation mr15" />
                 Manage Services
@@ -138,10 +153,7 @@ function AddService() {
             </div>
             <p className="fz15 fw400 ff-heading pl30 mt30">Account</p>
             <div className="sidebar_list_item ">
-              <a
-                href="page-dashboard-profile.html"
-                className="items-center -is-active"
-              >
+              <a href="page-dashboard-profile.html" className="items-center ">
                 <i className="flaticon-photo mr15" />
                 My Profile
               </a>

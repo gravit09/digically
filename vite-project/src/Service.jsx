@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
+import axios from "axios";
+import { GigContext } from "./GigContext";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Service() {
+  //const { selectedGigId } = useContext(GigContext);
+  const [gigDetails, setGigDetails] = useState(null);
+
+  const { gigid } = useParams();
+  // Options for OwlCarousel
   const options = {
     loop: true,
     margin: 10,
@@ -20,6 +29,65 @@ function Service() {
       },
     },
   };
+
+  useEffect(() => {
+    const fetchGigDetails = async () => {
+      try {
+        const response = await axios.get(`/api/gigs?gigId=${gigid}`);
+        if (
+          response.data &&
+          response.data.data &&
+          response.data.data.length > 0
+        ) {
+          const gig = response.data.data[0];
+          if (gig.media && gig.media.length > 0) {
+            const gigsWithImages = gig.media.map((mediaItem) => {
+              const imageUri = mediaItem.uri;
+              const imageUrl = `/api/gigs/media/${gig.gigId}/${imageUri}`;
+              return {
+                ...mediaItem,
+                imageUrl,
+              };
+            });
+            setGigDetails({
+              ...gig,
+              media: gigsWithImages,
+            });
+          } else {
+            setGigDetails(gig);
+          }
+        } else {
+          setGigDetails(null);
+        }
+      } catch (error) {
+        console.error("Error fetching gig details:", error);
+      }
+    };
+
+    if (gigid) {
+      fetchGigDetails();
+    } else {
+      setGigDetails(null); // Reset gig details if no gigId is selected
+    }
+  }, [gigid]);
+
+  //for placing order
+  const handleOrder = (gigId) => {
+    axios
+      .post("/api/gigs/order", {
+        gigId: gigId,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  if (!gigDetails) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <section className="pt0 pb90 pb30-md">
@@ -58,9 +126,7 @@ function Service() {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="position-relative">
-                        <h2>
-                          I will design website UI UX in adobe xd or figma
-                        </h2>
+                        <h2>{gigDetails.title}</h2>
                         <div className="list-meta mt10">
                           <a className="list-inline-item mb5-sm" href="#">
                             <span className="position-relative mr10">
@@ -71,19 +137,20 @@ function Service() {
                               />
                               <span className="online-badge" />
                             </span>
-                            <span className="fz14">Eleanor Pena</span>
+                            <span className="fz14">{gigDetails.by}</span>
                           </a>
                           <p className="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs">
                             <i className="fas fa-star vam fz10 review-color me-2" />{" "}
-                            4.82 94 reviews
+                            {gigDetails.rating} {gigDetails.totalRatings}{" "}
+                            reviews
                           </p>
                           <p className="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs">
-                            <i className="flaticon-file-1 vam fz20 me-2" /> 2
-                            Order in Queue
+                            <i className="flaticon-file-1 vam fz20 me-2" />{" "}
+                            {gigDetails.ordersInQueue} Order in Queue
                           </p>
                           <p className="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs">
-                            <i className="flaticon-website vam fz20 me-2" /> 902
-                            Views
+                            <i className="flaticon-website vam fz20 me-2" />{" "}
+                            {gigDetails.views} Views
                           </p>
                         </div>
                       </div>
@@ -98,7 +165,9 @@ function Service() {
                         </div>
                         <div className="details">
                           <h5 className="title">Delivery Time</h5>
-                          <p className="mb-0 text">1-3 Days</p>
+                          <p className="mb-0 text">
+                            {gigDetails.deliveryTime} Days
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -120,113 +189,44 @@ function Service() {
                         </div>
                         <div className="details">
                           <h5 className="title">Location</h5>
-                          <p className="mb-0 text">New York</p>
+                          <p className="mb-0 text">India</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="service-single-sldier vam_nav_style slider-1-grid owl-carousel owl-theme mb60">
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
+                  {gigDetails.media.map((mediaItem, index) => (
+                    <div key={index} className="item">
+                      <div className="thumb p50 p30-sm">
+                        <img
+                          src={mediaItem.imageUrl}
+                          alt=""
+                          className="w-100"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
                 <OwlCarousel className="owl-theme" {...options}>
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
+                  {gigDetails.media.map((mediaItem, index) => (
+                    <div key={index} className="item">
+                      <div className="thumb p50 p30-sm">
+                        <img
+                          src={mediaItem.imageUrl}
+                          alt=""
+                          className="w-100"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="thumb p50 p30-sm">
-                      <img
-                        src="images/listings/service-details-1.jpg"
-                        alt=""
-                        className="w-100"
-                      />
-                    </div>
-                  </div>
+                  ))}
                 </OwlCarousel>
 
                 <div className="service-about">
                   <div className="p30 bdr1 mb30 bg-white bdrs12 wow fadeInUp default-box-shadow1">
-                    <h4>About</h4>
-                    <p className="text mb30">
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. The point of using Lorem Ipsum is that it
-                      has a more-or-less normal distribution of letters, as
-                      opposed to using 'Content here, content here', making it
-                      look like readable English.
-                    </p>
-                    <p className="text mb-0">Services I provide:</p>
-                    <p className="text mb-0">1) Website Design</p>
-                    <p className="text mb-0">2) Mobile App Design</p>
-                    <p className="text mb-0">3) Brochure Design</p>
-                    <p className="text mb-0">4) Business Card Design</p>
-                    <p className="text mb30">5) Flyer Design</p>
-                    <p className="text mb30">
-                      Many desktop publishing packages and web page editors now
-                      use Lorem Ipsum as their default model text, and a search
-                      for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the
-                      years, sometimes by accident, sometimes on purpose
-                      (injected humour and the like).
-                    </p>
-                    <div className="d-flex align-items-start">
-                      <div className="list1">
-                        <h6>App type</h6>
-                        <p className="text mb-0">Business, Food &amp; drink,</p>
-                        <p className="text">Graphics &amp; design</p>
-                      </div>
-                      <div className="list1 ml80">
-                        <h6>Design tool</h6>
-                        <p className="text mb-0">Adobe XD, Figma,</p>
-                        <p className="text">Adobe Photoshop</p>
-                      </div>
-                      <div className="list1 ml80">
-                        <h6>Device</h6>
-                        <p className="text">Mobile, Desktop</p>
-                      </div>
-                    </div>
+                    <h4>Description</h4>
+                    <p className="text mb30">{gigDetails.description}</p>
                   </div>
 
                   <div className="p30 bdr1 mb30 bg-white bdrs12 wow fadeInUp default-box-shadow1">
@@ -651,42 +651,49 @@ function Service() {
                           aria-labelledby="nav-item2p-tab"
                         >
                           <div className="price-content">
-                            <div className="price">$29</div>
-                            <div className="h5 mb-2">
-                              High-converting Landing Pages
+                            <div className="price">
+                              {gigDetails.cost} digics
                             </div>
+                            <div className="h5 mb-2">{gigDetails.title}</div>
                             <p className="text fz14">
-                              I will redesign your current landing page or
-                              create one for you (upto 4 sections)
+                              {gigDetails.description
+                                .split(" ")
+                                .slice(0, 30)
+                                .join(" ")}
+                              ...
                             </p>
                             <hr className="opacity-100 mb20" />
                             <ul className="p-0 mb15 d-sm-flex align-items-center">
                               <li className="fz14 fw500 dark-color">
                                 <i className="flaticon-sandclock fz20 text-thm2 me-2 vam" />
-                                3 Days Delivery
+                                {gigDetails.deliveryTime} Days Delivery
                               </li>
                               <li className="fz14 fw500 dark-color ml20 ml0-xs">
                                 <i className="flaticon-recycle fz20 text-thm2 me-2 vam" />
-                                2 Revisions
+                                {gigDetails.reportCount} Revisions
                               </li>
                             </ul>
                             <div className="list-style1">
                               <ul className="">
-                                <li className="mb15">
-                                  <i className="far fa-check text-thm3 bgc-thm3-light" />
-                                  2 Page / Screen
-                                </li>
-                                <li>
-                                  <i className="far fa-check text-thm3 bgc-thm3-light" />
-                                  Source file
-                                </li>
+                                {gigDetails.tags.map((tag, index) => (
+                                  <li key={index} className="mb15">
+                                    <i className="far fa-check text-thm3 bgc-thm3-light" />
+                                    {tag}
+                                  </li>
+                                ))}
                               </ul>
                             </div>
-                            <div className="d-grid">
-                              <a href="#" className="ud-btn btn-thm">
-                                Continue $29
+                            <div
+                              className="d-grid"
+                              onClick={() => handleOrder(gigDetails.gigId)}
+                            >
+                              <Link
+                                to="/orderCompleted"
+                                className="ud-btn btn-thm"
+                              >
+                                Continue {gigDetails.cost} digics
                                 <i className="fal fa-arrow-right-long" />
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -705,7 +712,7 @@ function Service() {
                       </div>
                       <div className="ml20">
                         <h5 className="title mb-1">Kristin Watson</h5>
-                        <p className="mb-0">Dog Trainer</p>
+                        <p className="mb-0">Web developer</p>
                         <div className="review">
                           <p>
                             <i className="fas fa-star fz10 review-color pr10" />
@@ -721,7 +728,7 @@ function Service() {
                         <a className="meta fw500 text-start">
                           Location
                           <br />
-                          <span className="fz14 fw400">London</span>
+                          <span className="fz14 fw400">India</span>
                         </a>
                         <a className="meta fw500 text-start">
                           Rate
@@ -731,7 +738,7 @@ function Service() {
                         <a className="meta fw500 text-start">
                           Job Success
                           <br />
-                          <span className="fz14 fw400">%98</span>
+                          <span className="fz14 fw400">98%</span>
                         </a>
                       </div>
                     </div>

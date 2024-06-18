@@ -18,6 +18,8 @@ import Profile from "./Dashboard/Profile";
 import Reviews from "./Dashboard/Reviews";
 import Saved from "./Dashboard/Saved";
 import Invoice from "./Dashboard/Invoice";
+import { GigProvider } from "./GigContext";
+import OrderCompleted from "./OrderCompleted";
 
 export const ToggleContext = createContext();
 
@@ -59,8 +61,12 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/services",
+          path: "/services/:gigid",
           element: <Service />,
+        },
+        {
+          path: "/orderCompleted",
+          element: <OrderCompleted />,
         },
       ],
     },
@@ -121,9 +127,11 @@ function App() {
   ]);
 
   return (
-    <ToggleContext.Provider value={{ handleToggle, show }}>
-      <RouterProvider router={router} />
-    </ToggleContext.Provider>
+    <GigProvider>
+      <ToggleContext.Provider value={{ handleToggle, show }}>
+        <RouterProvider router={router} />
+      </ToggleContext.Provider>
+    </GigProvider>
   );
 }
 

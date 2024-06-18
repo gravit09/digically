@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Dashboard/Side.css";
+import SignIn from "../SignIn";
 function MobileDashNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  const [isLoggedIn, SetIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await axios.get(`/api/authenticate`);
+        if (response.data.success == true) {
+          SetIsLoggedIn(true);
+          console.log(response.data.success);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    checkAuth();
+  }, []);
 
   return (
     <div id="page" className="mobilie_header_nav stylehome1">
@@ -36,12 +54,14 @@ function MobileDashNav() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to="/dashboard">
-                <i className="flaticon-like mr10" />
-                Dashboard
-              </Link>
-            </li>
+            {isLoggedIn && (
+              <li>
+                <Link to="/dashboard">
+                  <i className="flaticon-like mr10" />
+                  Dashboard
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/dashboard/messages">
                 <i className="flaticon-chat mr10" />
@@ -63,7 +83,7 @@ function MobileDashNav() {
             <li>
               <Link to="/signin">
                 <i className="flaticon-dollar mr10" />
-                Logout
+                {isLoggedIn ? "Logout" : "SignIn"}
               </Link>
             </li>
           </ul>
