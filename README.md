@@ -1,1 +1,1 @@
-An web 3 based freelancing platform
+An web 3 based freelancing platform Frontend
